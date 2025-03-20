@@ -3,7 +3,7 @@ import {prismaClient} from "../application/database.js";
 export const createTestPicture = async () => {
     await prismaClient.picture.create({
         data: {
-            name: "D:\\contact-management-api\\src\\service\\uploaded\\orangutan.jpg",
+            name: "D:\\contact-management-api\\src\\service\\uploaded\\profil.jpg",
             username: "test"
         }
     })

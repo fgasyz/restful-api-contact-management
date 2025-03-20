@@ -22,14 +22,14 @@ describe("POST /api/users/:userId/uploads/picture", () => {
         .post("/api/users/" + user.username + "/uploads/picture")
         .set("Authorization", "test")
         .set("Content-Type", "multipart/form-data")
-        .attach("uploadPicture", __dirname + "\\orangutan.jpg")
+        .attach("uploadPicture", __dirname + "\\profil.jpg")
 
         logger.info(result.body)
 
         expect(result.status).toBe(200);
     });
     
-    it("should can not create new images if image format is not allowed", async () => {
+    it("should can not create new images if format is not image", async () => {
 
         const user = await getTestUser();
         const result = await supertest(web)
@@ -64,7 +64,7 @@ describe("GET /api/users/:userId/picture", () => {
         logger.info(result.body);
 
         expect(result.status).toBe(200);
-        expect(result.text).toEqual("{\"data\":{\"image\":{\"name\":\"D:\\\\contact-management-api\\\\src\\\\service\\\\uploaded\\\\orangutan.jpg\",\"username\":\"test\"}}}")
+        expect(result.text).toEqual("{\"data\":{\"image\":{\"name\":\"D:\\\\contact-management-api\\\\src\\\\service\\\\uploaded\\\\profil.jpg\",\"username\":\"test\"}}}")
     })
 
     

@@ -5,6 +5,10 @@ import { ResponseError } from "../error/response-error.js";
 import { createPictureValidation, getPictureValidation } from "../validation/picture-validation.js";
 import { getUserValidation } from "../validation/user-validation.js";
 import { validate } from "../validation/validation.js";
+// import { fileURLToPath } from 'url';
+
+// const __filename = fileURLToPath(import.meta.url); 
+// const __dirname = path.dirname(__filename);
 
 const create =  async (userId, request) => {
     const destinationUpload = __dirname + "\\uploaded\\" + request.name;

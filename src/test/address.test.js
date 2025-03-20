@@ -1,18 +1,18 @@
+import supertest from "supertest";
 import {
     createTestUser,
     removeTestUser
 } from "../utils/user-util.js";
 import {
     createTestContact,
-    getTestContact,
     removeAllTestContacts,
+    getTestContact,
 } from "../utils/contact-util.js";
 import {
     createTestAddress,
     getTestAddress,
     removeAllTestAddresses,
 } from "../utils/address-util.js";
-import supertest from "supertest";
 import {web} from "../application/web.js";
 
 describe('POST /api/contacts/:contactId/addresses', function () {
@@ -152,6 +152,7 @@ describe('PUT /api/contacts/:contactId/addresses/:addressId', function () {
     })
 
     it('should can update address', async () => {
+        
         const testContact = await getTestContact();
         const testAddress = await getTestAddress();
 

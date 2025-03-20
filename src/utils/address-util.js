@@ -1,4 +1,5 @@
 import {prismaClient} from "../application/database.js";
+import { getTestContact } from "./contact-util.js";
 
 export const removeAllTestAddresses = async () => {
     await prismaClient.address.deleteMany({
@@ -15,7 +16,7 @@ export const createTestAddress = async () => {
     await prismaClient.address.create({
         data: {
             contact_id: contact.id,
-            street: "jalan test",
+            street: 'jalan test',
             city: 'kota test',
             province: 'provinsi test',
             country: 'indonesia',
